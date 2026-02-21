@@ -1,0 +1,41 @@
+
+<main class="relative min-h-screen w-full flex flex-col items-center justify-center p-4 text-center text-white overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://images.pexels.com/photos/1475938/pexels-photo-1475938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+  <div class="absolute inset-0 bg-black/60 z-10"></div>
+  
+  <div class="relative z-20 flex flex-col items-center w-full max-w-4xl">
+    <header class="mb-10">
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight">
+        TWÓJ CEL.
+        <br>
+        <span class="text-lime-400">NASZE FINANSOWANIE.</span>
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+        Kupno samochodu? Remont? Zobacz, jak znaleźć idealny kredyt. Wprowadź swoje dane i pozwól nam znaleźć najlepsze oferty dla Ciebie.
+      </p>
+    </header>
+    
+    <div class="flex gap-4 mb-8">
+      <button 
+        (click)="activeTab.set('loan')"
+        [class]="activeTab() === 'loan' ? 'bg-lime-500 text-gray-900' : 'bg-gray-800 text-gray-400 hover:text-white'"
+        class="px-6 py-2 rounded-full font-bold transition-all"
+      >
+        Kredyt
+      </button>
+      <button 
+        (click)="activeTab.set('currency')"
+        [class]="activeTab() === 'currency' ? 'bg-lime-500 text-gray-900' : 'bg-gray-800 text-gray-400 hover:text-white'"
+        class="px-6 py-2 rounded-full font-bold transition-all"
+      >
+        Waluty
+      </button>
+    </div>
+
+    @if (activeTab() === 'loan') {
+      <app-loan-calculator></app-loan-calculator>
+    } @else {
+      <app-currency-converter></app-currency-converter>
+    }
+  </div>
+</main>

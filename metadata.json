@@ -1,0 +1,5 @@
+{
+  "name": "Kalkulator Ofert Kredytowych",
+  "description": "Aplikacja do symulacji kredytu i generowania spersonalizowanych ofert finansowych przy użyciu AI, inspirowana reklamą Allegro.",
+  "requestFramePermissions": []
+}
